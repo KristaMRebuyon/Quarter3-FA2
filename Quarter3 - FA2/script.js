@@ -13,37 +13,33 @@ function displayResult(operator) {
 
     if (operator === "+") {
         result = num1 + num2;
-        message += "sum is " + result;
-		
+        message += "sum of " + num1 + " and " + num2 + " is " + result;
+
     } else if (operator === "-") {
         result = num1 - num2;
-        message += "difference is " + result;
-		
+        message += "difference of " + num1 + " and " + num2 + " is " + result;
+
     } else if (operator === "*") {
         result = num1 * num2;
-        message += "product is " + result;
-		
+        message += "product of " + num1 + " and " + num2 + " is " + result;
+
     } else if (operator === "/") {
-		
-		if (num2 !== 0) {
-			result = num1 / num2;
-		} else {
-			result = "undefined (it cannot be divided by zero)";
-		}
-		
-    message += "quotient is " + result;
-	
-	} else if (operator === "%") {
-    
-		if (num2 !== 0) {
-			result = num1 % num2;
-		} else {
-			result = "undefined (it cannot be modulus by zero)";
-		}
-		
-    message += "remainder is " + result;
-	
-	}
-	
+        if (num2 !== 0) {
+            result = num1 / num2;
+            message += "quotient of " + num1 + " and " + num2 + " is " + result;
+        } else {
+            message += "quotient is undefined (it cannot be divided by zero)";
+        }
+
+    } else if (operator === "%") {
+        if (num2 !== 0) {
+            result = num1 % num2;
+            message += "remainder of " + num1 + " and " + num2 + " is " + result;
+        } else {
+            message += "remainder is undefined (it cannot be modulus by zero)";
+        }
+    }
+
     resultElement.innerHTML = message + ".";
 }
+
